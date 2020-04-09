@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>WISE QUOTES</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+        <div>
+            <p *ngIf='quotes.length > 0'><button (click)='findHighestVotes()' class="btn btn-outline-info">Check the
+                Best quote</button>
+            </p>
+            <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuote>
+              <div class="bestquote">
+                <p>{{bestQuote}}</p>
+                <p>{{highestCounter}}</p>
+                <p>{{dislikeCounter}}</p>
+              </div>
+            </div>
+        </div>
+      <div *ngFor='let quote of quotes;let i = index'>
+        <div>
+          <h6 id={{i}} appStrikethrough>{{quote.description}}</h6>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          
+        </div>
+
+        <div>
+            <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
+                <i class="fa fa-thumbs-up pr-1  ml-4 like" ng-click="count = count + 1"
+                    ng-init="count=0" style="color:white; font-size: 35px"></i>
+            </a>
+            <span class="m-4">{{ quote.clickCounter }}</span>
+      
+            <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
+                <i class="fa fa-thumbs-down pr-1 dislike" ng-click="count = count + 1"
+                    ng-init="count=0" style="color:white; font-size: 35px"></i>
+            </a>
+            <span class="m-4">{{ quote.dislikeCounter }}</span>
+        </div>
+        <div *ngIf='quote.showDescription'>
+          <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+ </div>
+  </div>
+
+  <p *ngIf='quotes.length > 5'>You have too many quotes</p>
+</div>
