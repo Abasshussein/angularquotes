@@ -12,3 +12,5 @@
 - E-Mail abasshussein03@gmail.com
 ### Live link
 - https://abasshussein.github.io/angularquotes/
+### Licence
+- licenced under theMIT licence
