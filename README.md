@@ -13,4 +13,4 @@
 ### Live link
 - https://abasshussein.github.io/angularquotes/
 ### Licence
-- licenced under theMIT licence
+- licenced under theMIT licence.
