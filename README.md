@@ -8,8 +8,8 @@
 - git clone https://github.com/Abasshussein/angularquotes.git
 - cd quote code .
 ## Support and contact details
-- Please reach me at +254736623078
-- E-Mail abasshussein03@gmail.com
+- Please reach me at +254736623078.
+- E-Mail abasshussein03@gmail.com.
 ### Live link
 - https://abasshussein.github.io/angularquotes/
 ### Licence
